@@ -26,5 +26,12 @@
         "psr-4": {
             "Dymantic\\CloudinaryModelImages\\Tests\\": "tests/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dymantic\\CloudinaryModelImages\\CloudinaryModelImagesServiceProvider"
+            ]
+        }
     }
 }
