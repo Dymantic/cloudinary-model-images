@@ -13,6 +13,10 @@ use Mockery;
 
 class CloudinaryClientTest extends TestCase
 {
+    use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
+
+
+
     /**
      *@test
      */
@@ -25,6 +29,9 @@ class CloudinaryClientTest extends TestCase
             'crop' => 'limit',
             'folder' => 'test-folder',
         ];
+
+        $cloud_mock = Mockery::mock("alias:" . \Cloudinary::class);
+        $cloud_mock->shouldReceive("config");
 
         $uploader = Mockery::mock("alias:". Uploader::class);
         $uploader->shouldReceive('upload')
@@ -94,6 +101,9 @@ class CloudinaryClientTest extends TestCase
                  ->with($image->public_id)
                  ->andReturn(['result' => 'ok']);
 
+        $cloud_mock = Mockery::mock("alias:" . \Cloudinary::class);
+        $cloud_mock->shouldReceive("config");
+
         $client = new CloudinaryClient([
             'key' => 'test_key',
             'secret' => 'test_secret',
@@ -106,4 +116,6 @@ class CloudinaryClientTest extends TestCase
         $this->assertTrue($result);
 
     }
+
+
 }

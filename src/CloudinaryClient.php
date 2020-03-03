@@ -21,6 +21,13 @@ class CloudinaryClient implements UploadClient
          $this->secret = $attributes['secret'];
          $this->cloud_name = $attributes['cloud_name'];
          $this->folder = $attributes['folder'];
+
+        \Cloudinary::config([
+            "cloud_name" => $this->cloud_name,
+            "api_key" => $this->key,
+            "api_secret" => $this->secret,
+            "secure" => true
+        ]);
     }
 
     public function upload(UploadedFile $file, $options = []): CloudinaryUpload
