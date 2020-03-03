@@ -26,7 +26,7 @@ class TestCase extends TestBench
 
         include_once __DIR__ . '/../database/migrations/create_cloudinary_model_images_table.php.stub';
 
-        (new \CreateCloudinaryModelImageTable)->up();
+        (new \CreateCloudinaryModelImagesTable)->up();
     }
 
     protected function getPackageProviders($app)

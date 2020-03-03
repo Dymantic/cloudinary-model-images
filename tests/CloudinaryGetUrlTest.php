@@ -69,7 +69,7 @@ class CloudinaryGetUrlTest extends TestCase
             'cloudinaryable_id' => $model->id,
             'cloudinaryable_type' => TestModel::class,
             'public_id' => 'test_public_id',
-            'version' => 'v123456789',
+            'version' => '123456789',
             'cloud_name' => 'test_cloud_name',
             'url' => 'https://res.cloudinary.com/test_cloud_name/image/upload/v123456789/test_public_id.jpg',
             'type' => 'image',

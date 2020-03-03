@@ -32,7 +32,7 @@ class CloudinaryImage extends Model
             return $this->url;
         }
 
-        $format = "https://res.cloudinary.com/%s/%s/upload/%s/%s/%s.%s";
+        $format = "https://res.cloudinary.com/%s/%s/upload/%s/v%s/%s.%s";
 
         return sprintf(
             $format,
