@@ -30,4 +30,9 @@ trait CloudinaryImages
     {
         return $this->cloudinaryImages()->where('tag', $tag)->get();
     }
+
+    public function latestCloudinaryImage($tag = '')
+    {
+        return $this->cloudinaryImages()->where('tag', $tag)->latest()->first();
+    }
 }

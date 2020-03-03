@@ -8,6 +8,7 @@ use Dymantic\CloudinaryModelImages\CloudinaryImage;
 use Dymantic\CloudinaryModelImages\CloudinaryUpload;
 use Dymantic\CloudinaryModelImages\UploadClient;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Str;
 use PHPUnit\Framework\Assert;
 
 class TestClient implements UploadClient
@@ -26,7 +27,7 @@ class TestClient implements UploadClient
     {
         $this->uploaded_files->push($file->getPath());
         return new CloudinaryUpload([
-            'public_id' => 'test_public_id',
+            'public_id' => Str::random(8),
             'cloud_name' => 'test_cloud_name',
             'version' => 'abcde',
             'type' => 'image',

@@ -96,7 +96,6 @@ class ImageUploadTest extends TestCase
         $this->assertDatabaseHas('cloudinary_model_images', [
             'cloudinaryable_id' => $model->id,
             'cloudinaryable_type' => TestModel::class,
-            'public_id' => 'test_public_id',
             'tag' => 'test-tag',
         ]);
 
