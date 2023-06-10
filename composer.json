@@ -11,7 +11,7 @@
     ],
     "require": {
         "cloudinary/cloudinary_php": "^1.16",
-        "spatie/image": "^1.7"
+        "spatie/image": "^2.2"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.5",
